@@ -79,12 +79,12 @@ build-frontend:
     - build-frontend
 
 
-deploy-web-master:
+deploy-web-main:
   <<: *deploy-web
   only:
-    - master@sosml/backend
+    - main@sosml/backend
   script:
-    - /ssh-deploy.sh './deploy-web.sh master' '~/deploy-cache/web/master' ./deploy-web.sh ./SOSML-frontend/frontend/build/
+    - /ssh-deploy.sh './deploy-web.sh main' '~/deploy-cache/web/main' ./deploy-web.sh ./SOSML-frontend/frontend/build/
   environment:
     name: development-web
     url: https://sosml.org/
@@ -118,7 +118,7 @@ deploy-server:
   tags:
     - secret
   only:
-    - master@sosml/backend
+    - main@sosml/backend
   dependencies:
     - backend-dependencies
   script:

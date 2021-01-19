@@ -16,7 +16,7 @@ case ${CI_COMMIT_REF_NAME} in
         samples="false"
         theme="nagisa"
         ;;
-    master)
+    main)
         sharing="true"
         samples="true"
         wishing="true"
